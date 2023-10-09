@@ -1,0 +1,33 @@
+application:
+  title: rest-api
+  version: 1.0.0
+
+spring:
+  profiles:
+    active: ${APP_PROFILE_ACTIVE:dev}
+  application:
+    name: rest-api
+    
+  datasource:
+    url: jdbc:h2:mem:dbo
+    driverClassName: org.h2.Driver
+    username: usr_root
+    password: pwd_toor
+  jpa:
+    show-sql: true
+    
+server:
+  port: ${APP_PORT:8085}
+  servlet:
+    context-path: /api/v1
+springdoc:
+  swagger-ui:
+    enabled: true
+    
+logging:
+  level:
+    web: TRACE
+
+
+
+
