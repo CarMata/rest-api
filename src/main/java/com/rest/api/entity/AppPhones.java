@@ -5,6 +5,8 @@ import java.io.Serializable;
 import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
@@ -18,9 +20,10 @@ import lombok.Data;
 public class AppPhones implements Serializable {
 	private static final long serialVersionUID = 1L;
 	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Basic(optional = false)
 	@Column(name = "phone_id", nullable = false)
-	private String phoneId;
+	private Integer phoneId;
 	@Basic(optional = false)
 	@Column(name = "phone_number", nullable = false)
 	private String phoneNumber;

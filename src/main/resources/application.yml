@@ -7,7 +7,9 @@ spring:
     active: ${APP_PROFILE_ACTIVE:dev}
   application:
     name: rest-api
-    
+
+
+   
   datasource:
     url: jdbc:h2:mem:dbo
     driverClassName: org.h2.Driver
@@ -15,6 +17,11 @@ spring:
     password: pwd_toor
   jpa:
     show-sql: true
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.H2Dialect
     
 server:
   port: ${APP_PORT:8085}
@@ -27,7 +34,3 @@ springdoc:
 logging:
   level:
     web: TRACE
-
-
-
-

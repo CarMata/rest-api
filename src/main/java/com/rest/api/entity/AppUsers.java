@@ -1,6 +1,7 @@
 package com.rest.api.entity;
 
 import java.io.Serializable;
+import java.util.Date;
 import java.util.List;
 
 import javax.persistence.Basic;
@@ -30,7 +31,26 @@ public class AppUsers implements Serializable{
 	    private String userEmail;
 	    @Basic(optional = false)
 	    @Column(name = "user_password", nullable = false)
-	    private String userPassword;
+	    private String userPassword;	    
+	    @Basic(optional = false)
+	    @Column(name = "user_created_at", nullable = false)
+	    private Date userCreatedAt;	    
+	    @Basic(optional = false)
+	    @Column(name = "user_active", nullable = false)
+	    private boolean userActive;
+	    
+	    @Basic(optional = true)
+	    @Column(name = "user_last_login", nullable = true)
+	    private Date userLastLogin;
+	    
+	    @Basic(optional = true)
+	    @Column(name = "user_modified_at", nullable = true)
+	    private Date userModifieddAt;
+	    
+	    @Basic(optional = true)
+	    @Column(name = "user_token", nullable = true)
+	    private String userToken;
+	    
 	    @OneToMany(cascade = CascadeType.ALL, mappedBy = "userId")
 	    private List<AppPhones> appPhonesList;
 }

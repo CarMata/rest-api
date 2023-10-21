@@ -1,12 +1,9 @@
 package com.rest.api.repository;
 
-import org.springframework.data.repository.CrudRepository;
-import org.springframework.stereotype.Repository;
+import org.springframework.data.jpa.repository.JpaRepository;
 
 import com.rest.api.entity.AppUsers;
-//@Repository
-//public interface UsersRepository extends CrudRepository<String,AppUsers>{
-//
-//	void save(AppUsers entity);
-//
-//}
+
+public interface UsersRepository extends JpaRepository<AppUsers, String> {
+
+}
